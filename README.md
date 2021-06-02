@@ -4,8 +4,8 @@ Official Crux "Space Adventure" Tutorial
 
 ## Quickstart
 
-Read the tutorial: https://nextjournal.com/crux-tutorial/
-Try online: https://nextjournal.com/try/crux-tutorial/
+* Read the tutorial: https://nextjournal.com/crux-tutorial/
+* Try online: https://nextjournal.com/try/crux-tutorial/
 
 ## Install Tutorial on Nextjournal
 
@@ -30,6 +30,26 @@ Click "Save changes and start" in the dialog that appears at the top.
 
 You can now run the tutorial notebook.
 
+## Reinstallation (for maintainers)
+
+For now, the Nextjournal notebooks are the golden store for the Space Adventure tutorial.
+As such, you should edit a Nextjournal notebook by following these steps:
+
+1. Edit the notebook directly in Nextjournal
+2. Select "Share: Publish Changes" to republish it
+3. Select "... => Export => Export As Markdown" from the upper-right menu
+4. Rename the exported file so it matches the corresponding file in this repository.
+Do not edit any of the image references.
+Although the images are tracked in this repo, they are not linked from the Markdown files.
+(See below.)
+5. Push your changed notebook to this repository.
+
+TODO: In the future, it would make more sense to switch to the "Markdown-first" technique of using
+GitHub as the golden store. To do this, we need to edit the Markdown files to remove Nextjournal
+metadata and reference absolute GitHub URLs instad of Nextjournal URLs.
+After that happens, please replace these instructions with reinstallation
+instructions similar to those used for the "Learn Crux Datalog Today" tutorial:
+https://github.com/crux-labs/learn-crux-datalog-today#re-installation-for-maintainers
 
 ## Copyright & License
 
