@@ -5,7 +5,17 @@ Official Crux "Space Adventure" Tutorial
 ## Quickstart
 
 * Read the tutorial: https://nextjournal.com/crux-tutorial/
-* Try online: https://nextjournal.com/try/crux-tutorial/
+* Try online:
+    1. https://nextjournal.com/try/crux-tutorial/start
+    2. https://nextjournal.com/try/crux-tutorial/put
+    3. https://nextjournal.com/try/crux-tutorial/datalog-queries
+    4. https://nextjournal.com/try/crux-tutorial/bitemporality
+    5. https://nextjournal.com/try/crux-tutorial/match
+    6. https://nextjournal.com/try/crux-tutorial/delete
+    7. https://nextjournal.com/try/crux-tutorial/evict
+    8. https://nextjournal.com/try/crux-tutorial/await
+
+
 
 ## Install Tutorial on Nextjournal
 
