@@ -129,9 +129,8 @@ Before you start the eviction process you make a query function so you can see t
   [node]
   (crux/q
    (crux/db node)
-   '{:find [id]
-     :where [[e :crux.db/id id]]
-     :full-results? true}))
+   '{:find [(pull e [*])]
+     :where [[e :crux.db/id id]]}))
 ```
 
 You show the others the result:
@@ -157,9 +156,10 @@ All the data associated with the the specified `:crux.db/id` has been removed fr
 The transaction history is immutable. This means the transactions will never be removed. You assure Ilex that the documents are completely removed from Crux, you can show this by looking at the `history-descending` information for each person.
 
 ```clojure id=00a1bb7a-46dc-4455-ba90-a50c485f7e46
-(crux/history-descending (crux/db crux)
-                           (crux/new-snapshot (crux/db crux))
-                           :person/kaarlang)
+(crux/entity-history (crux/db crux)
+                     :person/kaarlang
+                     :desc
+                     {:with-docs? true})
 ```
 
 You show the results to Kaarlang who is happy that there his details are no longer a part of the ships logs.
@@ -195,23 +195,23 @@ I’d love to hear any ideas for enhancements so don’t hesitate to get in touc
 <https://nextjournal.com/data/QmXnPp5t6NYoZYK4iT438kr6KxV4h2TKXfjW4KbRBrt6XN?content-type=image/jpeg&node-id=82b75d0b-67f2-4bc2-a36a-5bd2051e1807&filename=oumuamua.jpg&node-kind=file>
 
 <details id="com.nextjournal.article">
-<summary>This notebook was exported from <a href="https://nextjournal.com/a/LPtrycCCeyMe5hDp9YQTU?change-id=CwhbHnxgbJQtHGsSfdPugS">https://nextjournal.com/a/LPtrycCCeyMe5hDp9YQTU?change-id=CwhbHnxgbJQtHGsSfdPugS</a></summary>
+<summary>This notebook was exported from <a href="https://nextjournal.com/a/LPtrycCCeyMe5hDp9YQTU?change-id=CyhMmbqH2c4Wsqyu6fbq33">https://nextjournal.com/a/LPtrycCCeyMe5hDp9YQTU?change-id=CyhMmbqH2c4Wsqyu6fbq33</a></summary>
 
 ```edn nextjournal-metadata
 {:article
  {:settings nil,
   :nodes
   {"00a1bb7a-46dc-4455-ba90-a50c485f7e46"
-   {:compute-ref #uuid "9c60b913-8799-4b94-b9e6-bcf2581aabb3",
-    :exec-duration 179,
+   {:compute-ref #uuid "5b7ccd91-a5eb-435d-81a7-e9274983b4e6",
+    :exec-duration 50,
     :id "00a1bb7a-46dc-4455-ba90-a50c485f7e46",
     :kind "code",
     :output-log-lines {},
     :refs (),
     :runtime [:runtime "80403b0a-1226-48ff-9bcc-624ed02e3635"]},
    "188a6bc3-288a-4a96-b18d-bdbe893c7bcb"
-   {:compute-ref #uuid "8d559e36-65af-43b7-9a89-9039e0d4de34",
-    :exec-duration 45,
+   {:compute-ref #uuid "b49a2b0a-e7d5-474d-bc5b-a13f84a54258",
+    :exec-duration 46,
     :id "188a6bc3-288a-4a96-b18d-bdbe893c7bcb",
     :kind "code",
     :output-log-lines {},
@@ -222,16 +222,16 @@ I’d love to hear any ideas for enhancements so don’t hesitate to get in touc
     :kind "code-listing",
     :name "Ship Captain"},
    "2bdeaaa6-3672-48c1-bbc7-aa5d05fd1153"
-   {:compute-ref #uuid "e530863a-2506-46cb-a481-3100fc6bb137",
-    :exec-duration 921,
+   {:compute-ref #uuid "ce645546-3408-48a2-8493-9df4d43771ed",
+    :exec-duration 7791,
     :id "2bdeaaa6-3672-48c1-bbc7-aa5d05fd1153",
     :kind "code",
     :output-log-lines {},
     :refs (),
     :runtime [:runtime "80403b0a-1226-48ff-9bcc-624ed02e3635"]},
    "35dc65e9-f458-4e32-9a59-1af72cd12a78"
-   {:compute-ref #uuid "696d3513-7380-4c7f-8a36-0890db96a8f1",
-    :exec-duration 11792,
+   {:compute-ref #uuid "aa535970-b502-4239-a928-b70413014d99",
+    :exec-duration 12201,
     :id "35dc65e9-f458-4e32-9a59-1af72cd12a78",
     :kind "code",
     :output-log-lines {},
@@ -263,25 +263,33 @@ I’d love to hear any ideas for enhancements so don’t hesitate to get in touc
       :dest "/deps.edn"}]},
    "82b75d0b-67f2-4bc2-a36a-5bd2051e1807"
    {:id "82b75d0b-67f2-4bc2-a36a-5bd2051e1807", :kind "file"},
+   "8480e0d0-9ad2-440a-a7cb-6bebb50f77d8"
+   {:compute-ref #uuid "2ccdf133-dafd-4f2b-be6e-c2f242798100",
+    :exec-duration 43,
+    :id "8480e0d0-9ad2-440a-a7cb-6bebb50f77d8",
+    :kind "code",
+    :output-log-lines {},
+    :refs (),
+    :runtime [:runtime "80403b0a-1226-48ff-9bcc-624ed02e3635"]},
    "950de198-0847-4b3b-bd24-1d1300a30158"
-   {:compute-ref #uuid "814c04fd-d8e5-4d89-8bfa-7e9010c85448",
-    :exec-duration 179,
+   {:compute-ref #uuid "d2c7534e-fb26-45e5-b676-c0600e102d77",
+    :exec-duration 359,
     :id "950de198-0847-4b3b-bd24-1d1300a30158",
     :kind "code",
     :output-log-lines {},
     :refs (),
     :runtime [:runtime "80403b0a-1226-48ff-9bcc-624ed02e3635"]},
    "99b0dd9c-d5cb-4c34-8a77-d71f941e97cd"
-   {:compute-ref #uuid "05e23111-c931-486c-a25d-c354b7da450b",
-    :exec-duration 61,
+   {:compute-ref #uuid "bc949a24-d4d2-4c92-ae9a-61347d13dd14",
+    :exec-duration 69,
     :id "99b0dd9c-d5cb-4c34-8a77-d71f941e97cd",
     :kind "code",
     :output-log-lines {},
     :refs (),
     :runtime [:runtime "80403b0a-1226-48ff-9bcc-624ed02e3635"]},
    "9aaf2276-94b6-4c1e-a4e2-716c1dc3d7c3"
-   {:compute-ref #uuid "8047e78e-6865-48a6-9353-be48b9b83cdd",
-    :exec-duration 56,
+   {:compute-ref #uuid "0ba83de0-427a-415a-95f6-a016b584c595",
+    :exec-duration 283,
     :id "9aaf2276-94b6-4c1e-a4e2-716c1dc3d7c3",
     :kind "code",
     :output-log-lines {},
@@ -292,8 +300,8 @@ I’d love to hear any ideas for enhancements so don’t hesitate to get in touc
     :kind "code-listing",
     :name "Top secret security"},
    "c8c2c663-6436-429b-8125-70350b4302e3"
-   {:compute-ref #uuid "a04d4967-ce3f-4b54-a70d-5ec621d5e12d",
-    :exec-duration 63,
+   {:compute-ref #uuid "48509611-2e6b-43d5-a912-fed534082385",
+    :exec-duration 96,
     :id "c8c2c663-6436-429b-8125-70350b4302e3",
     :kind "code",
     :output-log-lines {},
@@ -307,7 +315,7 @@ I’d love to hear any ideas for enhancements so don’t hesitate to get in touc
     :name "deps.edn"}},
   :nextjournal/id #uuid "02b53d9b-fbfd-4709-92f8-3de9201154f3",
   :article/change
-  {:nextjournal/id #uuid "60b7b43c-f0b7-44b7-8bc7-3ad68a4c6bef"}}}
+  {:nextjournal/id #uuid "60ff0c45-65f9-45eb-b08b-f980bbc25e06"}}}
 
 ```
 </details>

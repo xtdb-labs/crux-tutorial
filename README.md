@@ -37,7 +37,7 @@ As such, you should edit a Nextjournal notebook by following these steps:
 
 1. Edit the notebook directly in Nextjournal
 2. Select "Share: Publish Changes" to republish it
-3. Select "... => Export => Export As Markdown" from the upper-right menu
+3. Select "Editor => Export => Export As Markdown" from the upper-right menu
 4. Rename the exported file so it matches the corresponding file in this repository.
 Do not edit any of the image references.
 Although the images are tracked in this repo, they are not linked from the Markdown files.
